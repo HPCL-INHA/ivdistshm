@@ -8,7 +8,10 @@
 #define PHYS_ADDR 0x800000000
 // This used to be sizeof(mem_flags), but later changed to 256 for memory alignment
 #define FLAG_PADDING 256
-#define SIZE (1048576 + FLAG_PADDING)
+#ifndef BUF_SIZE
+#define BUF_SIZE 1048576
+#endif
+#define SIZE (BUF_SIZE + FLAG_PADDING)
 
 #define NO_ERR 0
 #define ERR_INVALID 1
