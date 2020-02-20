@@ -16,6 +16,9 @@
 #define NO_ERR 0
 #define ERR_INVALID 1
 
+#define likely(x)   __builtin_expect(!!(x), 1)
+#define unlikely(x) __builtin_expect(!!(x), 0)
+
 typedef uint64_t mem_flags;
 
 typedef struct ivdistshm {
